@@ -1,0 +1,174 @@
+* {
+  box-sizing: border-box;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-break: break-word;
+}
+
+
+#content {
+  position: relative;
+  width: 1000px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+.logo {
+  display: none;
+}
+
+a img {
+  border: none;
+}
+
+#content h2.page_title {
+  text-align: center;
+}
+
+#content h2 {
+  font-weight: normal;
+  padding: 2.8em 0 1.5em 0;
+  font-weight: 'Sawarabi Mincho';
+  background: #ffeee2;
+  font-size: 36px;
+  line-height: 1;
+}
+
+#content ul.sub_navi {
+  position: relative;
+  width: 85%;
+  list-style: none;
+  margin: 0 auto;
+  padding: 4em 0;
+  text-align: center;
+}
+
+ul.sub_navi {
+  display: block;
+}
+
+#content ul.sub_navi li {
+  display: inline-block;
+  max-width: 800px;
+  margin: 0 1em 1em 0;
+  border-radius: 3px;
+  text-align: center;
+}
+
+#content ul.sub_navi li a {
+  display: block;
+  padding: 0.5em;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 3px;
+  text-decoration: none;
+  font-size: 13px;
+  line-height: 13px;
+  color: #3a3a3a;
+}
+
+.site_description {
+  display: block;
+}
+
+.textfield {
+  zoom: 1;
+}
+
+.textfield::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+#content > .inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+body .category_title {
+  text-align: center;
+  font-size: 20px;
+  margin: 0 0 0.5em 0;
+}
+
+body .category_title_underline {
+  width: 30px;
+  margin: 0 auto 2em;
+  border-bottom: 1px solid #dadbdb;
+}
+
+body .article {
+  margin: 0 0 4em;
+  text-align: center;
+}
+
+body .article_title {
+  margin: 0 0 0.5em;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 1.2;
+}
+
+body .article_title a {
+  position: relative;
+  background: transparent;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+body .article_title .recommend {
+  vertical-align: top;
+  margin-right: 0.2em;
+}
+
+body .price {
+  margin: 0 0 2em;
+  font-size: 20px;
+  line-height: 1;
+}
+
+body .photo img {
+  max-width: 100%;
+}
+
+body .text {
+  margin: 1em 0 0;
+  width: 100%;
+  padding-bottom: 4em;
+  border-bottom: 1px solid #dadbdb;
+}
+
+
+
+.textfield p {
+  margin: 0 0 0 0 !important;
+  word-break: normal;
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 600px) {
+  body .photo {
+    float: none;
+    max-width: 100%;
+    margin: 0 auto 1.5em;
+  }
+
+  body .text {
+    width: 90%;
+  }
+}
+
+
+@media only screen and (max-width: 1000px) {
+  #content {
+    width: 94%;
+    margin: 0 3%;
+  }
+
+  #content > .inner {
+    padding-left: 0%;
+    padding-right: 0%;
+  }
+}
+

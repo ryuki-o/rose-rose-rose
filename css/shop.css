@@ -1,0 +1,193 @@
+.inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mt_70 {
+  margin-bottom: 70px !important;
+}
+
+section {
+  display: block;
+}
+
+.ttl_01 {
+  margin-bottom: 30px;
+  text-align: center;
+  line-height: 1.3;
+  clear: both;
+}
+
+h1 {
+  overflow-wrap: break-word;
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+}
+
+:root {
+  --wp--preset--font-size--normal: 16px;
+  --wp--preset--font-size--huge: 42px;
+}
+
+.ttl_01 span.main {
+  color: #1a1a1a;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 26px;
+  font-weight: bold;
+  display: block;
+}
+
+.ttl_01 span.sub {
+  padding: 0 5px 5px;
+  font-size: 13px;
+  font-weight: bold;
+  border-bottom: 4px solid rgba(128, 128, 128, .2);
+  display: inline-block;
+}
+
+.ttl_03 {
+  margin-bottom: 20px;
+  padding: 5px 10px 3px;
+  color: #fff;
+  font-size: 22px;
+  background-color: #1a1a1a;
+}
+
+.f_times_new_roman {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.ttl_03 small {
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.salon_area {
+  margin: 0 0 60px;
+  display: table;
+}
+
+.salon_img {
+  padding: 0 0 0 0;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+p.salon_btn {
+  font-size: 14px;
+  text-align: center;
+}
+
+p {
+  overflow-wrap: break-word;
+}
+
+p.salon_btn a {
+  padding: 10px 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #800000;
+  display: block;
+}
+
+p.salon_btn_02 {
+  font-size: 14px;
+  text-align: center;
+}
+
+p.salon_btn_02 a {
+  margin: 7px 0;
+  padding: 10px 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #292929;
+  display: block;
+}
+
+.salon_text dl {
+  width: 660px;
+  margin: 15px 0 0;
+  font-size: 14px;
+}
+
+.salon_text dt:first-child {
+  border-top: none;
+}
+
+.salon_text dt {
+  width: 140px;
+  padding: 13px 0 10px 10px;
+  float: left;
+  clear: both;
+  border-top: 2px solid #700;
+}
+
+.salon_text dt:first-child + dd {
+  border-top: none;
+}
+
+.salon_text dd {
+  padding: 13px 10px 10px;
+  border-top: 2px solid #e2d9cb;
+  display: flex;
+}
+
+dd {
+  display: block;
+  margin-inline-start: 40px;
+}
+
+.salon_text dd a {
+  color: #333;
+  text-decoration: none;
+}
+
+.salon_text dt {
+  width: 140px;
+  padding: 13px 0 10px 10px;
+  float: left;
+  clear: both;
+  border-top: 2px solid #700;
+}
+
+@media only screen and (max-width: 640px) {
+  
+  .salon_area {
+    display: block;
+  }
+
+  .salon_img img {
+    width: 100%;
+  }
+
+  .salon_text {
+    margin-top: 10px;
+    display: block;
+  }
+
+  .salon_text dl {
+    width: 100%;
+  }
+
+  .salon_text dd {
+    width: auto;
+    display: flex;
+  }
+
+  .salon_text dd a {
+    text-decoration: underline;
+    color: blue;
+  }
+
+  .salon_text dt {
+    width: 77px;
+  }
+  
+}

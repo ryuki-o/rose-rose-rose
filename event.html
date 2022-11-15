@@ -1,0 +1,115 @@
+<!DOCTYPE HTML>
+<!--
+	Strata by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head prefix="og: http://ogp.me/ns#">
+		<!-- Global site tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-230693532-1"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'UA-230693532-1');
+		</script>
+		<!-- Global site tag (gtag.js) - Google Ads: 10891501089 -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10891501089"></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+
+			gtag('config', 'AW-10891501089');
+		</script>
+
+		<title>イベント情報 | Rose Rose Rose</title>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="https://static.spearly.com/css/spearly-richtext.min.css" type="text/css"/>
+    <style id="fpbf_ac93d8111_css">@font-face { font-family: 'fpbf_ac93d8111'; font-display: swap; src: url('https://s3-ap-northeast-1.amazonaws.com/fp-bf/3d4c80e6') format('woff'); }</style>
+    <script src="https://static.spearly.com/js/v2/spearly-cms.browser.js" defer></script>
+    <script>window.addEventListener('DOMContentLoaded',()=>{const t=document.querySelectorAll(':not(:defined)');for(const e of t) {e.style.visibility="hidden";}; window.spearly.config.AUTH_KEY="XZJSFXLmbFdVbJJhxH0a-7jz1viIeRO4GaKTPgLaBIs"},{once:true})</script>
+	</head>
+	<body class="is-preload">
+		<!-- Header -->
+			<header id="header">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <h2 class="pt-2 text-white">Rose Rose Rose</h2>
+          </a>
+        </div>
+			</header>
+
+		<!-- Main -->
+			<div id="main">
+
+				<!-- One -->
+					<section id="one">
+						<header class="major">
+							<h2>イベント情報</h2>
+						</header>
+					</section>
+
+				<!-- Two -->
+					<section id="two">
+						<h2>イベント一覧</h2>
+
+						<!-- ローディング画面 -->
+						<div id="loading">
+							<div class="spinner"></div>
+						</div>
+					
+            <blog-list data-item-page-path='item.html' data-perpage='100' style="text-align: center;">
+
+              
+                <h1>{%= blog_title %}</h1>
+            
+              
+							<a href="{%= blog_#url %}">
+								<img src="{%= blog_image %}" class="fit image" style="height: 240.3px;"/>
+							</a>
+							<div style="background: url('{%= blog_image %}');"></div>
+            
+            
+              
+                <p>{%= blog_date %}</p>
+            
+              
+                <a href="{%= blog_#url %}">この記事の詳細</a>
+            </blog-list>
+						<ul class="actions">
+							<li><a href="#" class="button">画面トップへ</a></li>
+						</ul>
+					</section>
+			</div>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="inner">
+					<ul class="copyright">
+						<li>&copy; Rose Rose Rose</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+			<script src="js/jquery.poptrox.min.js"></script>
+			<script src="js/browser.min.js"></script>
+			<script src="js/breakpoints.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+      <script src="js/script.js"></script>
+      <script src="js/paginathing.min.js"></script>
+			<script>
+				window.onload = function() {
+					const spinner = document.getElementById('loading');
+					spinner.classList.add('loaded');
+				}
+			</script>
+	</body>
+</html>
