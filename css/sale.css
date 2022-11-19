@@ -70,6 +70,83 @@ ul {
   box-sizing: border-box;
 }
 
+.products_Table li img {
+  margin: 0 auto 30px;
+}
+
+img {
+  border: 0;
+}
+
+.products_Table li h4 {
+  color: #f0f9f8;
+  background-color: #800000;
+  padding: 5px 0;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.5em;
+  margin: 0 0 15px;
+}
+
+.products_Table li p {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.products_Table li p.productsPriceText {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #000;
+  clear: both;
+  text-align: right;
+  font-weight: bold;
+  padding: 10px 0 5px;
+}
+
+.products_Table li .productsShop {
+  background-color: #f2f2f2;
+  padding: 10px 10px 7px;
+  font-size: .9em;
+  margin: 15px 0 0;
+}
+
+.products_Table li .productsShop h5 {
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.products_Table li .productsShop a:link {
+  color: #777;
+  text-decoration: none;
+}
+
+.products_Table li .productsShop a {
+  padding: 5px 5px 4px;
+  margin: 0 5px 3px;
+  display: inline-block;
+}
+
+.products_Table li .productsShop a i {
+  padding-right: 2px;
+}
+
+.fa {
+  font-weight: 900;
+}
+
+.fa {
+  font-family: Font Awesome\ 5 Free;
+}
+
+.fa {
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  text-rendering: auto;
+  line-height: 1;
+}
+
 
 @media only screen and (max-width: 640px) {
   .products_Table li {
