@@ -110,23 +110,38 @@
             <input type="hidden" name="_token" value="">
             <div class="form__box">
               <div class="form-group__box">
-                <div class="from__hader-box">
-                  <label class="control-label" for="form-input-0">コースメニュー</label>
+                <div class="form__hader-box">
+                  <label class="control-label" for="form-input-10">コースメニュー</label>
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <label class="reserve__slect">
-                    <select class="form-control" name="item[271]" id="form-input-0">
-                      <option>選択してください。</option>
-                      <option value="カウンセリング /30分以上 / 8,000円">カウンセリング /30分以上 / 8,000円</option>
-                      <option value="Extraordinary Escape / 所要時間は変動 / 50,000円">Extraordinary Escape / 所要時間は変動 / 50,000円</option>
-                      <option value="ハンドケア / 1時間 / 4,000円">ハンドケア / 1時間 / 4,000円</option>
-                      <option value="Golden Time(Sleeping&Work) / 30分以上 / 1,000円">Golden Time(Sleeping&Work) / 30分以上 / 1,000円</option>
-                      <option value="Pride Make Lesson / 1時間 / 10,000円">Pride Make Lesson / 1時間 / 10,000円</option>
-                      <option value="アイブロウ デザイニング / 所要時間は変動 / 10,000円">アイブロウ デザイニング / 所要時間は変動 / 10,000円</option>
-                    </select>
-                  </label>
-                  <small class="description"></small>
+                  <div>
+                    <label class="control-label customFormGroup_ttl">
+                      A: カウンセリング /30分以上 / 8,000円,<br><br> B: Extraordinary Escape / 所要時間は変動 / 50,000円,<br><br> C: ハンドケア / 1時間 / 4,000円,<br><br>
+                      D: Golden Time(Sleeping&Work) / 30分以上 / 1,000円,<br><br> E: Pride Make Lesson / 1時間 / 10,000円,<br><br> F: アイブロウ デザイニング / 所要時間は変動 / 10,000円
+                    </label><br><br>
+                    <div class="col-sm-8 form_inputs" style="display: flex; justify-content: space-evenly;">
+                      <label class="radio-inline">
+                        <input class="form_input" type="checkbox" name="menu1" value="カウンセリング /30分以上 / 8,000円">A
+                      </label>
+                      <label class="radio-inline">
+                        <input class="form_input" type="checkbox" name="menu2" value="Extraordinary Escape / 所要時間は変動 / 50,000円">B
+                      </label>
+                      <label class="radio-inline">
+                        <input class="form_input" type="checkbox" name="menu3" value="ハンドケア / 1時間 / 4,000円">C
+                      </label>
+                      <label class="radio-inline">
+                        <input class="form_input" type="checkbox" name="menu4" value="Golden Time(Sleeping&Work) / 30分以上 / 1,000円">D
+                      </label>
+                      <label class="radio-inline">
+                        <input class="form_input" type="checkbox" name="menu5" value="Pride Make Lesson / 1時間 / 10,000円">E
+                      </label>
+                      <label class="radio-inline">
+                        <input class="form_input" type="checkbox" name="menu6" value="アイブロウ デザイニング / 所要時間は変動 / 10,000円">F
+                      </label>
+                    </div>
+                  </div>
+                  <small class="description">※複数選択可</small>
                 </div>
               </div>
               <div class="form-group__box">
