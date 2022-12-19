@@ -1,3 +1,18 @@
+<?php
+// 変数の初期化
+$page_flag = 0;
+
+if( !empty($_POST['btn_confirm']) ) {
+
+	$page_flag = 1;
+
+} elseif( !empty($_POST['btn_submit']) ) {
+
+  $page_flag = 2;
+
+}
+?>
+
 <html lang="ja">
   <head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -39,7 +54,7 @@
               <a class="nav-link text-white" href="about.html">サロン概要</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="reserve.html">ご予約</a>
+              <a class="nav-link text-white" href="reserve.php">ご予約</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="lesson.html">お仕事依頼</a>
@@ -78,31 +93,173 @@
             <br>
             <br>
             <br>
-            <!-- ■割引除外日（水曜日定休　※前月25日までのご予約の場合はオープン致します。）
-            <br>
-            ・2022年7月16（土）、17日（日）
-            <br>
-            ・2022年8月11日（木）～14日（日）
-            <br>
-            ・2022年9月17日（土）、18日（日）、23日（金）、24日（土）
-            <br>
-            ・2022年10月8日（土）、9日（日）
-            <br>
-            ・2022年11月なし
-            <br>
-            ・2022年12月30日（金）、31日（土）
-            <br>
-            ・2023年1月1日（日）～3日（火）、7日（土）、8日（日）
-            <br>
-            ・2023年2月11日（金）、12日（土）
-            <br>
-            ・2023年3月なし
-            <br>
-            <br> -->
-            ※団体予約や既存予約のある日は、営業いたします。
+            ※不定休、完全予約制。
           </p>
         </div>
       </section>
+
+      <?php if( $page_flag === 1 ): ?>
+
+      <h1 style="text-align: center; font-size: 20px; margin-top: 10px; margin-bottom: 25px;">入力内容の確認</h1>
+
+      <form id="f1" method="post" action="conversion.php" style="text-align: center;" accept-charset="shift_jis">
+        <div class="element_wrap">
+          <label>予約メニュー</label>
+          <p><?php echo $_POST['menu1']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu2']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu3']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu4']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu5']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu6']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>予約希望日</label>
+          <p><?php echo $_POST['date']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>予約の時間帯</label>
+          <p><?php echo $_POST['time']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>ご利用人数（女性）</label>
+          <p><?php echo $_POST['women']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>ご利用人数（男性）</label>
+          <p><?php echo $_POST['men']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>ご要望・お問合せ</label>
+          <p><?php echo $_POST['want']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>お申込者名前＜漢字＞</label>
+          <p><?php echo $_POST['kanji']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>お申込者名前＜カタカナ＞</label>
+          <p><?php echo $_POST['kana']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>電話番号</label>
+          <p><?php echo $_POST['tel']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>メールアドレス</label>
+          <p><?php echo $_POST['email']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>ご利用施設</label>
+          <p><?php echo $_POST['place']; ?></p>
+        </div>
+        
+        
+        <a href="reserve.php">戻る</a>
+        <input type="submit" name="btn_submit" value="予約情報を入力" onclick="submitSJIS();">
+        <input type="hidden" name="menu1" value="<?php echo $_POST['menu1']; ?>">
+        <input type="hidden" name="menu2" value="<?php echo $_POST['menu2']; ?>">
+        <input type="hidden" name="menu3" value="<?php echo $_POST['menu3']; ?>">
+        <input type="hidden" name="menu4" value="<?php echo $_POST['menu4']; ?>">
+        <input type="hidden" name="menu5" value="<?php echo $_POST['menu5']; ?>">
+        <input type="hidden" name="menu6" value="<?php echo $_POST['menu6']; ?>">
+        <input type="hidden" name="date" value="<?php echo $_POST['date']; ?>">
+        <input type="hidden" name="time" value="<?php echo $_POST['time']; ?>">
+
+        <input type="hidden" name="women" value="<?php echo $_POST['women']; ?>">
+        <input type="hidden" name="men" value="<?php echo $_POST['men']; ?>">
+        <input type="hidden" name="want" value="<?php echo $_POST['want']; ?>">
+        <input type="hidden" name="kanji" value="<?php echo $_POST['kanji']; ?>">
+        <input type="hidden" name="kana" value="<?php echo $_POST['kana']; ?>">
+        <input type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>">
+        <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>">
+        <input type="hidden" name="place" value="<?php echo $_POST['place']; ?>">
+        
+      </form>
+
+      <?php
+    
+      mb_language("Japanese");
+      mb_internal_encoding("UTF-8");
+
+      $header = null;
+      $auto_reply_subject = null;
+      $auto_reply_text = null;
+      $auto_reply_subject = null;
+      $auto_reply_text = null;
+      date_default_timezone_set('Asia/Tokyo');
+
+      // ヘッダー情報を設定
+      $header = "MIME-Version: 1.0\n";
+      $header .= "From: Rose Rose Rose <roseroserose098@icloud.com>\n";
+      $header .= "Reply-To: Rose Rose Rose <roseroserose098@icloud.com>\n";
+
+      // 件名を設定
+      $auto_reply_subject = 'ご登録ありがとうございます。';
+
+      // 本文を設定
+      $auto_reply_text = "この度は、RoseRoseRoseにご予約頂き誠にありがとうございます。
+      下記の内容でご予約を受け付けました。\n\n";
+      $auto_reply_text .= "予約日時：" . date("Y-m-d H:i") . "\n";
+      $auto_reply_text .= "予約メニュー 1：" . $_POST['menu1'] . "\n";
+      $auto_reply_text .= "予約メニュー 2：" . $_POST['menu2'] . "\n";
+      $auto_reply_text .= "予約メニュー 3：" . $_POST['menu3'] . "\n";
+      $auto_reply_text .= "予約メニュー 4：" . $_POST['menu4'] . "\n";
+      $auto_reply_text .= "予約メニュー 5：" . $_POST['menu5'] . "\n";
+      $auto_reply_text .= "予約メニュー 6：" . $_POST['menu6'] . "\n";
+      $auto_reply_text .= "予約希望日：" . $_POST['date'] . "\n";
+      $auto_reply_text .= "予約の時間帯：" . $_POST['time'] . "\n";
+      $auto_reply_text .= "ご利用人数(女性）：" . $_POST['women'] . "\n";
+      $auto_reply_text .= "ご利用人数（男性）：" . $_POST['men'] . "\n";
+      $auto_reply_text .= "ご要望・お問い合わせ：" . $_POST['want'] . "\n";
+      $auto_reply_text .= "お申込者名前＜漢字＞：" . $_POST['kanji'] . "\n";
+      $auto_reply_text .= "お申込者名前＜カタカナ＞：" . $_POST['kana'] . "\n";
+      $auto_reply_text .= "電話番号：" . $_POST['tel'] . "\n";
+      $auto_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
+      $auto_reply_text .= "ご利用施設：" . $_POST['place'] . "\n\n";
+      $auto_reply_text .= "このメールは送信専用ですので、返信されてもご対応できかねます。" . "\n\n";
+      $auto_reply_text .= "Rose Rose Rose 事務局";
+
+      $to = $_POST['email'];
+
+      mb_send_mail($to, $auto_reply_subject, $auto_reply_text, $header);
+
+      // 運営側へ送るメールの件名
+      $admin_reply_subject = "Rose Rose Roseへのご予約を受け付けました";
+      
+      // 本文を設定
+      $admin_reply_text = "下記の内容で予約がありました。\n\n";
+      $admin_reply_text .= "予約日時：" . date("Y-m-d H:i") . "\n";
+      $admin_reply_text .= "予約メニュー 1：" . $_POST['menu1'] . "\n";
+      $admin_reply_text .= "予約メニュー 2：" . $_POST['menu2'] . "\n";
+      $admin_reply_text .= "予約メニュー 3：" . $_POST['menu3'] . "\n";
+      $admin_reply_text .= "予約メニュー 4：" . $_POST['menu4'] . "\n";
+      $admin_reply_text .= "予約メニュー 5：" . $_POST['menu5'] . "\n";
+      $admin_reply_text .= "予約メニュー 6：" . $_POST['menu6'] . "\n";
+      $admin_reply_text .= "予約希望日：" . $_POST['date'] . "\n";
+      $admin_reply_text .= "予約の時間帯：" . $_POST['time'] . "\n";
+      $admin_reply_text .= "ご利用人数(女性）：" . $_POST['women'] . "\n";
+      $admin_reply_text .= "ご利用人数（男性）：" . $_POST['men'] . "\n";
+      $admin_reply_text .= "ご要望・お問い合わせ：" . $_POST['want'] . "\n";
+      $admin_reply_text .= "お申込者名前＜漢字＞：" . $_POST['kanji'] . "\n";
+      $admin_reply_text .= "お申込者名前＜カタカナ＞：" . $_POST['kana'] . "\n";
+      $admin_reply_text .= "電話番号：" . $_POST['tel'] . "\n";
+      $admin_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
+      $admin_reply_text .= "ご利用施設：" . $_POST['place'] . "\n\n";
+      // 運営側へメール送信
+      mb_send_mail( 'funmon0722@icloud.com', $admin_reply_subject, $admin_reply_text, $header);
+    ?>
+
+    <?php elseif( $page_flag === 2 ): ?>
+
+    <p>送信が完了しました。</p>
+
+    <?php else: ?>
+
       <section class="full-width">
         <hr class="separete__line">
         <div class="container">
@@ -150,7 +307,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control js-date" name="item[272]" id="form-input-1" type="date" value autocomplete="off">
+                  <input class="form-control js-date" name="date" id="form-input-1" type="date" value autocomplete="off">
                   <small class="description">
                     ご利用1ヶ月前まで当フォームのリクエストを承ります。
                     <br>
@@ -164,7 +321,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="item[273]" id="form-input-2" type="time" value>
+                  <input class="form-control" name="time" id="form-input-2" type="time" value>
                   <small class="description"></small>
                 </div>
               </div>
@@ -174,7 +331,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="item[274]" id="form-input-3" type="number" value>
+                  <input class="form-control" name="women" id="form-input-3" type="number" value>
                   <small class="description">※ご利用者様がいない場合は0とご記入ください。</small>
                 </div>
               </div>
@@ -184,7 +341,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="item[275]" id="form-input-4" type="number" value>
+                  <input class="form-control" name="men" id="form-input-4" type="number" value>
                   <small class="description">※ご利用者様がいない場合は0とご記入ください。</small>
                 </div>
               </div>
@@ -193,7 +350,7 @@
                   <label class="control-label" for="form-input-5">ご要望・お問合せ</label>
                 </div>
                 <div class="form__item-box">
-                  <textarea class="form-control" name="item[277]" id="form-input-5" style="height: 103px;"></textarea>
+                  <textarea class="form-control" name="want" id="form-input-5" style="height: 103px;"></textarea>
                   <small class="description"></small>
                 </div>
               </div>
@@ -203,7 +360,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="item[278]" id="form-input-6" type="text" value>
+                  <input class="form-control" name="kanji" id="form-input-6" type="text" value>
                   <small class="description"></small>
                 </div>
               </div>
@@ -213,7 +370,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="item[279]" id="form-input-7" type="text" value>
+                  <input class="form-control" name="kana" id="form-input-7" type="text" value>
                   <small class="description"></small>
                 </div>
               </div>
@@ -223,7 +380,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="item[280]" id="form-input-8" type="tel" value>
+                  <input class="form-control" name="tel" id="form-input-8" type="tel" value>
                   <small class="description"></small>
                 </div>
               </div>
@@ -233,7 +390,7 @@
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="item[281]" id="form-input-9" type="email" value>
+                  <input class="form-control" name="email" id="form-input-9" type="email" value>
                   <small class="description">
                     ＊ご予約可否などをご連絡いたしますので、「@rose-rose-rose.jp」ドメインから送信するメールを
                     ご自身のPCやスマートフォンで受信できるよう、事前に設定をお願いします。
@@ -249,11 +406,11 @@
                 </div>
                 <div class="form__item-box">
                   <div class="input-group">
-                    <input name="item[282]" type="radio" id="radio-282-0" value="VIPルーム">
+                    <input name="place" type="radio" id="radio-282-0" value="VIPルーム">
                     <label class="radio-inline" for="radio-282-0">
                       VIPルーム
                     </label>
-                    <input name="item[282]" type="radio" id="radio-282-1" value="レンタルサロン">
+                    <input name="place" type="radio" id="radio-282-1" value="レンタルサロン">
                     <label class="radio-inline" for="radio-282-1">
                       レンタルサロン
                     </label>
@@ -261,46 +418,18 @@
                   <small class="description"></small>
                 </div>
               </div>
-              <!-- <div class="form-group__box">
-                <div class="form__hader-box">
-                  <label class="control-label" for="form-input-11">ご宿泊者名</label>
-                </div>
-                <div class="form__item-box">
-                  <input class="form-control" name="item[936]" id="form-input-11" type="text" value>
-                  <small class="description"></small>
-                </div>
-              </div>
-              <div class="form-group__box">
-                <div class="form__hader-box">
-                  <label class="control-label" for="form-input-12">チェックイン日</label>
-                </div>
-                <div class="form__item-box">
-                  <input class="form-control js-date" name="item[283]" id="form-input-12" type="date" value autocomplete="off">
-                  <small class="description"></small>
-                </div>
-              </div>
-              <div class="form-group__box">
-                <div class="form__hader-box">
-                  <label class="control-label" for="form-input-13">チェックアウト日</label>
-                </div>
-                <div class="form__item-box">
-                  <input class="form-control js-date" name="item[284]" id="form-input-13" type="date" value autocomplete="off">
-                  <small class="description"></small>
-                </div>
-              </div> -->
             </div>
             <div class="row">
               <div class="col-sm-12">
-                <button class="btn detail__btn" type="submit">
-                  入力内容を確認する
-                </button>
+                <input id="submitButton" type="submit" name="btn_confirm" value="入力内容を確認する">
               </div>
             </div>
           </form>
         </div>
       </section>
     </main>
-     
+    
+    <?php endif; ?>
    
     <footer>
       <div class="foot_area">
@@ -321,7 +450,7 @@
             <a href="about.html" class="ga-event" id="link-trainer-f">会社概要</a>
           </li>
           <li>
-            <a href="reserve.html" class="ga-event" id="link-faq-f">ご予約</a>
+            <a href="reserve.php" class="ga-event" id="link-faq-f">ご予約</a>
           </li>
           <li>
             <a href="lesson.html" class="ga-event" id="link-training-f">お仕事依頼</a>
