@@ -45,7 +45,7 @@ if( !empty($_POST['btn_confirm']) ) {
               <a class="nav-link text-white" href="https://rose-3.stores.jp/" target="_blank">ショップ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="recruit.html">求人</a>
+              <a class="nav-link text-white" href="recruit.php">求人</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="free.html">フリーサロン</a>
@@ -441,7 +441,7 @@ if( !empty($_POST['btn_confirm']) ) {
             <a href="https://rose-3.stores.jp/" class="ga-event" id="link-locations-f">ショップ</a>
           </li>
           <li>
-            <a href="recruit.html" class="ga-event" id="link-pt-f">求人</a>
+            <a href="recruit.php" class="ga-event" id="link-pt-f">求人</a>
           </li>
           <li>
             <a href="free.html" class="ga-event" id="link-pilates-f">フリーサロン</a>

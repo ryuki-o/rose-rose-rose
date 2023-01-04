@@ -1,3 +1,18 @@
+<?php
+// 変数の初期化
+$page_flag = 0;
+
+if( !empty($_POST['btn_confirm']) ) {
+
+	$page_flag = 1;
+
+} elseif( !empty($_POST['btn_submit']) ) {
+
+  $page_flag = 2;
+
+}
+?>
+
 <html lang="ja">
   <head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -30,7 +45,7 @@
               <a class="nav-link text-white" href="https://rose-3.stores.jp/" target="_blank">ショップ</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="recruit.html">求人</a>
+              <a class="nav-link text-white" href="recruit.php">求人</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="free.html">フリーサロン</a>
@@ -59,7 +74,105 @@
     <!-- タイトル -->
     <h1 class="title">Rose Rose Roseは輝く女性を求めています。</h1>
     
-  
+    <?php if( $page_flag === 1 ): ?>
+
+      <h1 style="text-align: center; font-size: 20px; margin-top: 10px; margin-bottom: 25px;">入力内容の確認</h1>
+
+      <form id="f1" method="post" action="conversion.php" style="text-align: center;" accept-charset="shift_jis">
+        <div class="element_wrap">
+          <label>お名前</label>
+          <p><?php echo $_POST['name']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>電話番号</label>
+          <p><?php echo $_POST['phone']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>メールアドレス</label>
+          <p><?php echo $_POST['email']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>年齢</label>
+          <p><?php echo $_POST['age']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>連絡方法</label>
+          <p><?php echo $_POST['contact']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>備考</label>
+          <p><?php echo $_POST['description']; ?></p>
+        </div>
+        
+        
+        <a href="recruit.php">戻る</a>
+        <input type="submit" name="btn_submit" value="この求人に応募" onclick="submitSJIS();">
+        <input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
+        <input type="hidden" name="phone" value="<?php echo $_POST['phone']; ?>">
+        <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>">
+        <input type="hidden" name="age" value="<?php echo $_POST['age']; ?>">
+        <input type="hidden" name="contact" value="<?php echo $_POST['contact']; ?>">
+        <input type="hidden" name="description" value="<?php echo $_POST['description']; ?>">
+      </form>
+
+      <?php
+    
+      mb_language("Japanese");
+      mb_internal_encoding("UTF-8");
+
+      $header = null;
+      $auto_reply_subject = null;
+      $auto_reply_text = null;
+      $auto_reply_subject = null;
+      $auto_reply_text = null;
+      date_default_timezone_set('Asia/Tokyo');
+
+      // ヘッダー情報を設定
+      $header = "MIME-Version: 1.0\n";
+      $header .= "From: Rose Rose Rose <roseroserose098@icloud.com>\n";
+      $header .= "Reply-To: Rose Rose Rose <roseroserose098@icloud.com>\n";
+
+      // 件名を設定
+      $auto_reply_subject = 'ご応募ありがとうございます。';
+
+      // 本文を設定
+      $auto_reply_text = "この度は、RoseRoseRoseの求人にご応募頂き誠にありがとうございます。
+      下記の内容でご応募を受け付けました。\n\n";
+      $auto_reply_text .= "ご応募日時：" . date("Y-m-d H:i") . "\n";
+      $auto_reply_text .= "お名前：" . $_POST['name'] . "\n";
+      $auto_reply_text .= "電話番号：" . $_POST['phone'] . "\n";
+      $auto_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
+      $auto_reply_text .= "年齢：" . $_POST['age'] . "\n";
+      $auto_reply_text .= "連絡方法：" . $_POST['contact'] . "\n";
+      $auto_reply_text .= "備考：" . $_POST['description'] . "\n\n";
+      $auto_reply_text .= "このメールは送信専用ですので、返信されてもご対応できかねます。" . "\n\n";
+      $auto_reply_text .= "Rose Rose Rose 事務局";
+
+      $to = $_POST['email'];
+
+      mb_send_mail($to, $auto_reply_subject, $auto_reply_text, $header);
+
+      // 運営側へ送るメールの件名
+      $admin_reply_subject = "Rose Rose Roseの求人へのご応募を受け付けました";
+      
+      // 本文を設定
+      $admin_reply_text = "下記の内容で応募がありました。\n\n";
+      $admin_reply_text .= "応募日時：" . date("Y-m-d H:i") . "\n";
+      $admin_reply_text .= "お名前：" . $_POST['name'] . "\n";
+      $admin_reply_text .= "電話番号：" . $_POST['phone'] . "\n";
+      $admin_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
+      $admin_reply_text .= "年齢：" . $_POST['age'] . "\n";
+      $admin_reply_text .= "連絡方法：" . $_POST['contact'] . "\n";
+      $admin_reply_text .= "備考：" . $_POST['description'] . "\n\n";
+      // 運営側へメール送信
+      mb_send_mail( 'funmon0722@icloud.com', $admin_reply_subject, $admin_reply_text, $header);
+    ?>
+
+    <?php elseif( $page_flag === 2 ): ?>
+
+    <p>送信が完了しました。</p>
+
+    <?php else: ?>
     
    
     <table data-structure="m-table">
@@ -214,7 +327,7 @@
                           </div>
                         </div>
                         <div class="form-group" data-elem-name="formInputCustomText" data-structure="e-form-mail">
-                          <label class="col-sm-3 control-label customFormGroup_ttl">メールアドレス（任意）</label>
+                          <label class="col-sm-3 control-label customFormGroup_ttl_required">メールアドレス</label>
                           <div class="col-sm-8 form_inputs">
                             <input class="form-control form_input" name="email" placeholder="xxxx@example.com" type="email">
                           </div>
@@ -270,7 +383,8 @@
             </div>
           </div>
         </div>
-     
+
+        <?php endif; ?>
    
     <footer>
       <div class="foot_area">
@@ -282,7 +396,7 @@
             <a href="https://rose-3.stores.jp/" class="ga-event" id="link-locations-f">ショップ</a>
           </li>
           <li>
-            <a href="recruit.html" class="ga-event" id="link-pt-f">求人</a>
+            <a href="recruit.php" class="ga-event" id="link-pt-f">求人</a>
           </li>
           <li>
             <a href="free.html" class="ga-event" id="link-pilates-f">フリーサロン</a>
