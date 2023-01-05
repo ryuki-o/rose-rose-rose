@@ -48,7 +48,7 @@ if( !empty($_POST['btn_confirm']) ) {
               <a class="nav-link text-white" href="recruit.php">求人</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="free.html">フリーサロン</a>
+              <a class="nav-link text-white" href="free.php">フリーサロン</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="about.html">サロン概要</a>
@@ -444,7 +444,7 @@ if( !empty($_POST['btn_confirm']) ) {
             <a href="recruit.php" class="ga-event" id="link-pt-f">求人</a>
           </li>
           <li>
-            <a href="free.html" class="ga-event" id="link-pilates-f">フリーサロン</a>
+            <a href="free.php" class="ga-event" id="link-pilates-f">フリーサロン</a>
           </li>
           <li>
             <a href="about.html" class="ga-event" id="link-trainer-f">会社概要</a>

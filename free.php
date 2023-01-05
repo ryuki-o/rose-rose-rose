@@ -1,3 +1,18 @@
+<?php
+// 変数の初期化
+$page_flag = 0;
+
+if( !empty($_POST['btn_confirm']) ) {
+
+	$page_flag = 1;
+
+} elseif( !empty($_POST['btn_submit']) ) {
+
+  $page_flag = 2;
+
+}
+?>
+
 <html lang="ja">
   <head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
@@ -35,7 +50,7 @@
               <a class="nav-link text-white" href="recruit.php">求人</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="free.html">フリーサロン</a>
+              <a class="nav-link text-white" href="free.php">フリーサロン</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="about.html">サロン概要</a>
@@ -53,6 +68,113 @@
         </div>
       </div>
     </nav>
+
+    <?php if( $page_flag === 1 ): ?>
+
+      <h1 style="text-align: center; font-size: 20px; margin-top: 10px; margin-bottom: 25px;">入力内容の確認</h1>
+
+      <form id="f1" method="post" action="conversion.php" style="text-align: center;" accept-charset="shift_jis">
+        <div class="element_wrap">
+          <label>企業名</label>
+          <p><?php echo $_POST['your-name']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>担当者様お名前</label>
+          <p><?php echo $_POST['name']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>お電話番号</label>
+          <p><?php echo $_POST['tel']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>メールアドレス</label>
+          <p><?php echo $_POST['email']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>会社ご住所</label>
+          <p><?php echo $_POST['textarea']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>面貸し希望の職種</label>
+          <p><?php echo $_POST['type']; ?></p>
+        </div>
+        <div class="element_wrap">
+          <label>面貸し依頼の内容</label>
+          <p><?php echo $_POST['description']; ?></p>
+        </div>
+        
+        
+        <a href="recruit.php">戻る</a>
+        <input type="submit" name="btn_submit" value="入力内容を送信" onclick="submitSJIS();">
+        <input type="hidden" name="your-name" value="<?php echo $_POST['your-name']; ?>">
+        <input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
+        <input type="hidden" name="tel" value="<?php echo $_POST['tel']; ?>">
+        <input type="hidden" name="email" value="<?php echo $_POST['email']; ?>">
+        <input type="hidden" name="textarea" value="<?php echo $_POST['textarea']; ?>">
+        <input type="hidden" name="type" value="<?php echo $_POST['type']; ?>">
+        <input type="hidden" name="description" value="<?php echo $_POST['description']; ?>">
+      </form>
+
+      <?php
+    
+      mb_language("Japanese");
+      mb_internal_encoding("UTF-8");
+
+      $header = null;
+      $auto_reply_subject = null;
+      $auto_reply_text = null;
+      $auto_reply_subject = null;
+      $auto_reply_text = null;
+      date_default_timezone_set('Asia/Tokyo');
+
+      // ヘッダー情報を設定
+      $header = "MIME-Version: 1.0\n";
+      $header .= "From: Rose Rose Rose <roseroserose098@icloud.com>\n";
+      $header .= "Reply-To: Rose Rose Rose <roseroserose098@icloud.com>\n";
+
+      // 件名を設定
+      $auto_reply_subject = '申し込みありがとうございます。';
+
+      // 本文を設定
+      $auto_reply_text = "この度は、RoseRoseRoseの面貸しサロンに申し込み頂き誠にありがとうございます。
+      下記の内容で申し込みを受け付けました。\n\n";
+      $auto_reply_text .= "申し込み日時：" . date("Y-m-d H:i") . "\n";
+      $auto_reply_text .= "企業名：" . $_POST['your-name'] . "\n";
+      $auto_reply_text .= "担当者様お名前：" . $_POST['name'] . "\n";
+      $auto_reply_text .= "お電話番号：" . $_POST['tel'] . "\n";
+      $auto_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
+      $auto_reply_text .= "会社ご住所：" . $_POST['textarea'] . "\n";
+      $auto_reply_text .= "面貸し希望の職種：" . $_POST['type'] . "\n";
+      $auto_reply_text .= "面貸し依頼の内容：" . $_POST['description'] . "\n\n";
+      $auto_reply_text .= "このメールは送信専用ですので、返信されてもご対応できかねます。" . "\n\n";
+      $auto_reply_text .= "Rose Rose Rose 事務局";
+
+      $to = $_POST['email'];
+
+      mb_send_mail($to, $auto_reply_subject, $auto_reply_text, $header);
+
+      // 運営側へ送るメールの件名
+      $admin_reply_subject = "Rose Rose Roseの面貸しサロンへの申し込みを受け付けました";
+      
+      // 本文を設定
+      $admin_reply_text = "下記の内容で申し込みがありました。\n\n";
+      $admin_reply_text .= "申し込み日時：" . date("Y-m-d H:i") . "\n";
+      $admin_reply_text .= "企業名：" . $_POST['your-name'] . "\n";
+      $admin_reply_text .= "担当者様お名前：" . $_POST['name'] . "\n";
+      $admin_reply_text .= "お電話番号：" . $_POST['tel'] . "\n";
+      $admin_reply_text .= "メールアドレス：" . $_POST['email'] . "\n";
+      $admin_reply_text .= "会社ご住所：" . $_POST['textarea'] . "\n";
+      $admin_reply_text .= "面貸し希望の職種：" . $_POST['type'] . "\n";
+      $admin_reply_text .= "面貸し依頼の内容：" . $_POST['description'] . "\n\n";
+      // 運営側へメール送信
+      mb_send_mail( 'funmon0722@icloud.com', $admin_reply_subject, $admin_reply_text, $header);
+    ?>
+
+    <?php elseif( $page_flag === 2 ): ?>
+
+    <p>送信が完了しました。</p>
+
+    <?php else: ?>
 
     <main id="PAGES_CONTAINER" tabindex="-1">
       <div id="SITE_PAGES" class="_1gF1C">
@@ -258,7 +380,7 @@
                             </p>
                             <p>
                               通常、3営業日以内のご返信を差し上げますが1週間経ちましたても返信がない場合は、送信トラブルの可能性がございますので、
-                              その際はお手数でございますが、株式会社Rose Rose Rose(000-0000-0000)までお問い合わせくださいませ。
+                              その際はお手数でございますが、株式会社Rose Rose Rose(090-3322-8029)までお問い合わせくださいませ。
                             </p>
                             <div role="form" class="wpcf7" id="wpcf7-f1176-p1177-o1" lang="ja" dir="ltr">
                               <div class="screen-reader-response">
@@ -280,19 +402,10 @@
                                 </p>
                                 <p>
                                   <label>
-                                    企業名(フリガナ)
-                                    <br>
-                                    <span class="wpcf7-form-control-wrap" data-name="text-263">
-                                      <input type="text" name="text-263" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
-                                    </span>
-                                  </label>
-                                </p>
-                                <p>
-                                  <label>
-                                    担当者様お名前(フリガナ)
+                                    担当者様お名前
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="text-264">
-                                      <input type="text" name="text-264" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="name" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
                                     </span>
                                   </label>
                                 </p>
@@ -301,7 +414,7 @@
                                     お電話番号
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="tel-248">
-                                      <input type="text" name="tel-248" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="tel" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
                                     </span>
                                   </label>
                                 </p>
@@ -310,7 +423,7 @@
                                     メールアドレス
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="your-email">
-                                      <input type="text" name="your-email" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="email" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
                                     </span>
                                   </label>
                                 </p>
@@ -319,7 +432,7 @@
                                     会社ご住所
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="textarea-591">
-                                      <input type="text" name="textarea-591" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="textarea" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
                                     </span>
                                   </label>
                                 </p>
@@ -328,7 +441,7 @@
                                     面貸し希望の職種
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="text-266">
-                                      <input type="text" name="text-266" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="type" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
                                     </span>
                                   </label>
                                 </p>
@@ -337,7 +450,7 @@
                                     面貸し依頼の内容などをご記入ください。
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="textarea-592">
-                                      <input type="text" name="textarea-592" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="description" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
                                     </span>
                                   </label>
                                 </p>
@@ -352,7 +465,7 @@
                                   内容にお間違いがなければ、チェックをお願いします。
                                 </p>
                                 <p>
-                                  <input type="submit" value="送信" class="wpcf7-form-control has-spinner wpcf7-submit" disabled>
+                                  <input type="submit" name="btn_confirm" value="入力内容を確認" class="wpcf7-form-control has-spinner wpcf7-submit">
                                   <span class="wpcf7-spinner">
                 
                                   </span>
@@ -364,6 +477,8 @@
                         </article>
                       </div>
                     </div>
+
+                    <?php endif; ?>
                     
                     <div id="comp-l3l7xpot" class="_2Hij5 _3bcaz" data-testid="richTextElement">
                       <h5 class="font_5" style="font-size: 23px;">
@@ -375,7 +490,7 @@
                                   <span style="letter-spacing: normal;">
                                     会社名：株式会社 Rose Rose Rose
                                     <br>
-                                     &ZeroWidthSpace;連絡先:
+                                     &ZeroWidthSpace;連絡先:090-3322-8029
                                      
                                   </span>
                                 </span>
@@ -407,7 +522,7 @@
             <a href="recruit.php" class="ga-event" id="link-pt-f">求人</a>
           </li>
           <li>
-            <a href="free.html" class="ga-event" id="link-pilates-f">フリーサロン</a>
+            <a href="free.php" class="ga-event" id="link-pilates-f">フリーサロン</a>
           </li>
           <li>
             <a href="about.html" class="ga-event" id="link-trainer-f">会社概要</a>
