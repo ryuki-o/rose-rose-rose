@@ -104,7 +104,7 @@ if( !empty($_POST['btn_confirm']) ) {
         </div>
         
         
-        <a href="recruit.php">戻る</a>
+        <a href="free.php">戻る</a>
         <input type="submit" name="btn_submit" value="入力内容を送信" onclick="submitSJIS();">
         <input type="hidden" name="your-name" value="<?php echo $_POST['your-name']; ?>">
         <input type="hidden" name="name" value="<?php echo $_POST['name']; ?>">
