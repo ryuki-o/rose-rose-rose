@@ -56,6 +56,9 @@ if( !empty($_POST['btn_confirm']) ) {
               <a class="nav-link text-white" href="about.html">サロン概要</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link text-white" href="">UARBAN ROSE</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link text-white" href="reserve.php">ご予約</a>
             </li>
             <li class="nav-item">
@@ -525,7 +528,10 @@ if( !empty($_POST['btn_confirm']) ) {
             <a href="free.php" class="ga-event" id="link-pilates-f">フリーサロン</a>
           </li>
           <li>
-            <a href="about.html" class="ga-event" id="link-trainer-f">会社概要</a>
+            <a href="about.html" class="ga-event" id="link-trainer-f">サロン概要</a>
+          </li>
+          <li>
+            <a href="" class="ga-event" id="link-trainer-f">UARBAN ROSE</a>
           </li>
           <li>
             <a href="reserve.php" class="ga-event" id="link-faq-f">ご予約</a>
