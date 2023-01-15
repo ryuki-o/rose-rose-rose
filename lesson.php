@@ -226,6 +226,37 @@ if( !empty($_POST['btn_confirm']) ) {
           <a href="https://liff.line.me/1645278921-kWRPP32q/?accountId=657mzgof" target="_blank">LINEでカンタン依頼♪（無料）<br>※登録後にスタンプをお送りください🙇</a>
         </p>
       </div>
+      <div class="pointBox">
+        <div class="point">
+          <h4 class="icon">Point1</h4>
+          <h4 class="title">
+            鹿児島で10年以上の
+            <br>
+            サービスの実績
+          </h4>
+          <p>
+
+          </p>
+        </div>
+        <div class="point">
+          <h4 class="icon">Point2</h4>
+          <h4 class="title">
+            大手実績あり
+          </h4>
+          <p>
+
+          </p>
+        </div>
+        <div class="point">
+          <h4 class="icon">Point3</h4>
+          <h4 class="title">
+            世界トップクラスの施術
+          </h4>
+          <p>
+
+          </p>
+        </div>
+      </div>
       <main class="page-digest">
         <div class="digest-title__box">
           <h2 style="text-align: center;" class="digest-title">
