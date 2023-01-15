@@ -22,10 +22,10 @@ if( !empty($_POST['btn_confirm']) ) {
     <link rel="canonical" href="">
     <link rel="icon" type="image/png" href="">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/free.css">
     <link rel="stylesheet" href="css/graph.css">
+    <link rel="stylesheet" href="css/gym.css">
     <title>フリーサロン | Rose Rose Rose</title>
     <meta name="google-site-verification" content="xfNzY8aeStBZUZtHtn0MsEsLpp4yKvaJCTk5VQRrXds" />
   </head>
@@ -366,6 +366,54 @@ if( !empty($_POST['btn_confirm']) ) {
                       </h5>
                     </div>
 
+                    <h3>
+                      Rose Rose Rose：フリーサロン
+                    </h3>
+                    <div class="box27">
+                      <span class="box-title">備品一覧</span>
+                      <p>
+                        <a class="btn-flat-logo">
+                          ホットボックス
+                        </a>
+                        <a class="btn-flat-logo">
+                          蒸しタオル
+                        </a>
+                        <a class="btn-flat-logo">
+                          マット
+                        </a>
+                        <a class="btn-flat-logo">
+                          テーブル
+                        </a>
+                        <a class="btn-flat-logo">
+                          イス２脚
+                        </a>
+                        <a class="btn-flat-logo">
+                          作業台
+                        </a>
+                        <a class="btn-flat-logo">
+                          キッチン
+                        </a>
+                        <a class="btn-flat-logo">
+                          ポット
+                        </a>
+                        <a class="btn-flat-logo">
+                          Wi-Fi
+                        </a>
+                        <a class="btn-flat-logo">
+                          トイレ
+                        </a>
+                      </p>
+                    </div>
+                    <p>
+                      ※タオル類も貸し出し可能です。
+                      <br>
+                      ※料理等は不可。
+                      <br>
+                      ※下見や見学も可能なので、詳しくはお問い合わせください。
+                    </p>
+                    <br>
+                    <br>
+
                     <div class="l-contents">
                       <div class="l-contents__inner l-inner">
                         <article class="p-entry l-primary">
@@ -530,7 +578,7 @@ if( !empty($_POST['btn_confirm']) ) {
           <li>
             <a href="about.html" class="ga-event" id="link-trainer-f">サロン概要</a>
           </li>
-          <li>
+          <li>s
             <a href="" class="ga-event" id="link-trainer-f">UARBAN ROSE</a>
           </li>
           <li>
