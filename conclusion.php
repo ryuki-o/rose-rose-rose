@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/reserve.css">
-    <title>申し込み完了 | Rose Rose Rose</title>
+    <title>ご予約完了 | Rose Rose Rose</title>
     <meta name="google-site-verification" content="xfNzY8aeStBZUZtHtn0MsEsLpp4yKvaJCTk5VQRrXds" />
   </head>
   <body>
@@ -58,12 +58,14 @@
     </nav>
 
     <main class="page-digest form-page">
-      
-     
-
-      <h1 style="text-align: center; font-size: 20px; margin-top: 10px; margin-bottom: 25px;">申し込みが完了しました！</h1>        
-        
-      <a href="index.html">TOPページに戻る</a>
+      <div class="text-center my-5">
+          <h1 class="mb-5">※まだご予約は確定しておりません。</h1>
+          <p class="salon_btn">
+            <a class="" href="https://rose-3.stores.jp/">こちらから商品を購入</a>
+          </p>
+          <p class="mb-2">商品を購入後よりご予約が確定されますので、ご注意ください。</p>
+          <p class="mb-4">お客様のご利用をスタッフ一同心よりお待ちしております。</p>
+      </div>
     </main>
     <footer>
       <div class="foot_area">
@@ -104,3 +106,18 @@
     </footer>  
   </body>
 </html>
+<style>
+  p.salon_btn {
+  font-size: 14px;
+  text-align: center;
+}
+
+p.salon_btn a {
+  padding: 10px 0;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #800000;
+  display: block;
+}
+</style>
