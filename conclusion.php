@@ -107,17 +107,57 @@
   </body>
 </html>
 <style>
-  p.salon_btn {
-  font-size: 14px;
-  text-align: center;
+
+
+*,
+*::before,
+*:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
 }
 
-p.salon_btn a {
-  padding: 10px 0;
-  color: #fff;
-  font-weight: bold;
+.btn,
+a.btn,
+button.btn {
+  background-color: #9f000c;
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 4rem;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
   text-decoration: none;
-  background-color: #800000;
-  display: block;
+  letter-spacing: 0.1em;
+  color: #fff;
+  border-radius: 0.5rem;
 }
+
+a.btn--red.btn--cubic {
+  border-radius: 5px solid #9f000c;
+}
+
+a.btn--red.btn--cubic:hover {
+  margin-top: 3px;
+  border-bottom: 2px solid #9f000c;
+}
+
+a.btn--radius {
+  border-bottom: 100vh;
+}
+
+.fa-position-right {
+  position: absolute;
+  top: calc(50% - .5em);
+  right: 1rem;
+}
+
 </style>
