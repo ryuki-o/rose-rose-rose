@@ -332,7 +332,7 @@ if( !empty($_POST['btn_confirm']) ) {
                         <div class="form-group" data-elem-name="formInputCustomText" data-structure="e-form-mail">
                           <label class="col-sm-3 control-label customFormGroup_ttl_required">メールアドレス</label>
                           <div class="col-sm-8 form_inputs">
-                            <input class="form-control form_input" name="email" placeholder="xxxx@example.com" type="email">
+                            <input class="form-control form_input" name="email" placeholder="xxxx@example.com" type="email" required="required">
                           </div>
                           <input type="hidden" value="メールアドレス" name="system[replyToKey]">
                         </div>
@@ -356,10 +356,10 @@ if( !empty($_POST['btn_confirm']) ) {
                           <label class="col-sm-3 control-label customFormGroup_ttl_required">ご希望の連絡方法</label>
                           <div class="col-sm-8 form_inputs" style="display: flex; justify-content: space-evenly;">
                             <label class="radio-inline">
-                              <input class="form_input" type="radio" name="contact" value="電話">電話
+                              <input class="form_input" type="radio" name="contact" value="電話" required="required">電話
                             </label>
                             <label class="radio-inline">
-                              <input class="form_input" type="radio" name="contact" value="メール">メール
+                              <input class="form_input" type="radio" name="contact" value="メール" required="required">メール
                             </label>
                           </div>
                         </div>

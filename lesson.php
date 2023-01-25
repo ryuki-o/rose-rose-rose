@@ -376,23 +376,23 @@ if( !empty($_POST['btn_confirm']) ) {
                     <div class="form-group" data-elem-name="formInputCustomText" data-structure="e-form-text">
                       <label class="col-sm-3 control-label customFormGroup_ttl_required">お電話番号</label>
                       <div class="col-sm-8 form_inputs">
-                        <input class="form-control form_input" name="phone" placeholder="080-xxxx-xxxx" type="tel">
+                        <input class="form-control form_input" name="phone" placeholder="080-xxxx-xxxx" type="tel" required="required">
                       </div>
                     </div>
                     <div class="form-group" data-elem-name="formInputCustomText" data-structure="e-form-mail">
                       <label class="col-sm-3 control-label customFormGroup_ttl_required">メールアドレス</label>
                       <div class="col-sm-8 form_inputs">
-                        <input class="form-control form_input" name="email" placeholder="xxxx@example.com" type="email" data-input-category-name="mail_address">
+                        <input class="form-control form_input" name="email" placeholder="xxxx@example.com" type="email" data-input-category-name="mail_address" required="required">
                       </div>
                     </div>
                     <div class="form-group" data-elem-name="formInputCustomText" data-structure="e-form-checkbox">
                       <label class="col-sm-3 control-label customFormGroup_ttl">ご希望の連絡方法</label>
                       <div class="col-sm-8 form_inputs">
                         <label class="checkbox-inline">
-                          <input class="form_input" type="checkbox" name="contact" value="メール">メール
+                          <input class="form_input" type="checkbox" name="contact" value="メール" required="required">メール
                         </label>
                         <label class="checkbox-inline">
-                          <input class="form_input" type="checkbox" name="contact" value="電話">電話
+                          <input class="form_input" type="checkbox" name="contact" value="電話" required="required">電話
                         </label>
                       </div>
                     </div>
@@ -427,7 +427,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   </div>
                   <div class="form-group">
                     <div data-structure="e-text">お仕事依頼の内容をご記入ください</div>
-                    <input type="text" placeholder="お肌に関するアドバイスをしてほしい" name="description">
+                    <input type="text" placeholder="お肌に関するアドバイスをしてほしい" name="description" required="required">
                   </div>
                   <div class="u-mtsm">
                     <div data-structure="e-text">プライバシーポリシーをお読みの上、同意して送信して下さい。</div>

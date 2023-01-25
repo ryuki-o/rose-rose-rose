@@ -447,7 +447,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                     企業名
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="your-name">
-                                      <input type="text" name="your-name" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" aria-invalid="false">
+                                      <input type="text" name="your-name" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required form_input" aria-invalid="false" required="required">
                                     </span>
                                   </label>
                                 </p>
@@ -456,7 +456,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                     担当者様お名前
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="text-264">
-                                      <input type="text" name="name" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="name" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required="required">
                                     </span>
                                   </label>
                                 </p>
@@ -465,7 +465,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                     お電話番号
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="tel-248">
-                                      <input type="text" name="tel" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="tel" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required="required">
                                     </span>
                                   </label>
                                 </p>
@@ -474,7 +474,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                     メールアドレス
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="your-email">
-                                      <input type="text" name="email" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="email" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required="required">
                                     </span>
                                   </label>
                                 </p>
@@ -483,7 +483,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                     会社ご住所
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="textarea-591">
-                                      <input type="text" name="textarea" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="textarea" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required="required">
                                     </span>
                                   </label>
                                 </p>
@@ -492,7 +492,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                     面貸し希望の職種
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="text-266">
-                                      <input type="text" name="type" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="type" value size="40" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required="required">
                                     </span>
                                   </label>
                                 </p>
@@ -501,7 +501,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                     面貸し依頼の内容などをご記入ください。
                                     <br>
                                     <span class="wpcf7-form-control-wrap" data-name="textarea-592">
-                                      <input type="text" name="description" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false">
+                                      <input type="text" name="description" value size="100" class="wpcf7-form-control wpcf7-text wpcf7-text wpcf7-validates-as-required" aria-required="true" aria-invalid="false" required="required">
                                     </span>
                                   </label>
                                 </p>
@@ -509,7 +509,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                   <span class="wpcf7-form-control-wrap" data-name="acceptance-503">
                                     <span class="wpcf7-form-control wpcf7-acceptance">
                                       <span class="wpcf7-list-item">
-                                        <input type="checkbox" name="acceptance-503" value="1" aria-invalid="false">
+                                        <input type="checkbox" name="acceptance-503" value="1" aria-invalid="false" required="required">
                                       </span>
                                     </span>
                                   </span>

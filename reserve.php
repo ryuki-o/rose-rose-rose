@@ -310,7 +310,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control js-date" name="date" id="form-input-1" type="date" value autocomplete="off">
+                  <input class="form-control js-date" name="date" id="form-input-1" type="date" value autocomplete="off" required="required">
                   <small class="description">
                     ご利用1ヶ月前まで当フォームのリクエストを承ります。
                     <br>
@@ -324,7 +324,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="time" id="form-input-2" type="time" value>
+                  <input class="form-control" name="time" id="form-input-2" type="time" value required="required">
                   <small class="description"></small>
                 </div>
               </div>
@@ -334,7 +334,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="women" id="form-input-3" type="number" value>
+                  <input class="form-control" name="women" id="form-input-3" type="number" value required="required">
                   <small class="description">※ご利用者様がいない場合は0とご記入ください。</small>
                 </div>
               </div>
@@ -344,7 +344,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="men" id="form-input-4" type="number" value>
+                  <input class="form-control" name="men" id="form-input-4" type="number" value required="required">
                   <small class="description">※ご利用者様がいない場合は0とご記入ください。</small>
                 </div>
               </div>
@@ -353,7 +353,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   <label class="control-label" for="form-input-5">ご要望・お問合せ</label>
                 </div>
                 <div class="form__item-box">
-                  <textarea class="form-control" name="want" id="form-input-5" style="height: 103px;"></textarea>
+                  <textarea class="form-control" name="want" id="form-input-5" style="height: 103px;" required="required"></textarea>
                   <small class="description"></small>
                 </div>
               </div>
@@ -363,7 +363,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="kanji" id="form-input-6" type="text" value>
+                  <input class="form-control" name="kanji" id="form-input-6" type="text" value required="required">
                   <small class="description"></small>
                 </div>
               </div>
@@ -373,27 +373,27 @@ if( !empty($_POST['btn_confirm']) ) {
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="kana" id="form-input-7" type="text" value>
+                  <input class="form-control" name="kana" id="form-input-7" type="text" value required="required">
                   <small class="description"></small>
                 </div>
-              </div>
+              </div required="required">
               <div class="form-group__box">
                 <div class="form__hader-box">
                   <label class="control-label" for="form-input-8">電話番号</label>
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="tel" id="form-input-8" type="tel" value>
+                  <input class="form-control" name="tel" id="form-input-8" type="tel" value required="required">
                   <small class="description"></small>
                 </div>
-              </div>
+              </div required="required">
               <div class="form-group__box">
                 <div class="form__hader-box">
                   <label class="control-label" for="form-input-9">メールアドレス</label>
                   <span class="text-danger">※</span>
                 </div>
                 <div class="form__item-box">
-                  <input class="form-control" name="email" id="form-input-9" type="email" value>
+                  <input class="form-control" name="email" id="form-input-9" type="email" value required="required">
                   <small class="description">
                     ＊ご予約可否などをご連絡いたしますので、「@rose-rose-rose.jp」ドメインから送信するメールを
                     ご自身のPCやスマートフォンで受信できるよう、事前に設定をお願いします。
@@ -409,11 +409,11 @@ if( !empty($_POST['btn_confirm']) ) {
                 </div>
                 <div class="form__item-box">
                   <div class="input-group">
-                    <input name="place" type="radio" id="radio-282-0" value="VIPルーム">
+                    <input name="place" type="radio" id="radio-282-0" value="VIPルーム" required="required">
                     <label class="radio-inline" for="radio-282-0">
                       VIPルーム
                     </label>
-                    <input name="place" type="radio" id="radio-282-1" value="レンタルサロン">
+                    <input name="place" type="radio" id="radio-282-1" value="レンタルサロン" required="required">
                     <label class="radio-inline" for="radio-282-1">
                       レンタルサロン
                     </label>
