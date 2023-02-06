@@ -313,11 +313,7 @@ a.response_btn::before {
 }
 
 footer {
-  width: 100%;
-  background: #fff;
-  padding: 30px 0;
-  overflow: hidden;
-  margin: 0 auto;
+  color: #fff;
 }
 
 .foot_area {
@@ -346,22 +342,6 @@ footer {
   border-right: 1px solid #fff;
 }
 
-.foot_area ul li a {
-  font-size: 11px;
-  line-height: 14px;
-  color: #333;
-  text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
-
-#copy {
-  color: #333;
-  font-size: 12px;
-  padding: 6px 0;
-  text-align: center;
-  margin: 0 auto;
-}
 
 #header_nav {
   display: none;
@@ -726,11 +706,7 @@ ul.room_list li img {
   }
 
   footer {
-    width: 100%;
-    background: #fff;
-    padding: 30px 0;
-    overflow: hidden;
-    margin: 0 auto;
+    color: #fff;
   }
 
   .foot_area {
@@ -755,18 +731,8 @@ ul.room_list li img {
     box-sizing: border-box;
   }
 
-  .foot_area ul li a {
-    color: #888;
-    font-size: 12px;
-  }
-
   .foot_area ul li:nth-child(2n) {
     margin-right: 0;
-  }
-
-  #copy {
-    color: #888;
-    padding-bottom: 60px;
   }
 
   .sp_only {
