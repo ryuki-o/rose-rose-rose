@@ -218,7 +218,7 @@ if( !empty($_POST['btn_confirm']) ) {
         </tr>
         <tr class="" data-elem-name="tr">
           <th data-structure="e-th" class=""><strong>勤務時間</strong></th>
-          <td data-structure="e-td" class="">実働7.5時間</td>
+          <td data-structure="e-td" class="">約7.5時間</td>
         </tr>
         <tr class="" data-elem-name="tr">
           <th data-structure="e-th" class=""><strong>休日・休暇</strong></th>
