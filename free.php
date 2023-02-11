@@ -180,6 +180,14 @@ if( !empty($_POST['btn_confirm']) ) {
     <?php else: ?>
 
     <main id="PAGES_CONTAINER" tabindex="-1">
+      <ol class="breadcrumb">
+        <li>
+          <a href="index.html">TOP></a>
+        </li>
+        <li>
+          Rose Rose Roseの面貸しサロン
+        </li>
+      </ol>
       <div id="SITE_PAGES" class="_1gF1C">
         <div id="SITE_PAGES_TRANSITION_GROUP" class="_2YGAo">
           <div id="tgmki" class="Ry26q">

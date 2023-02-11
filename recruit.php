@@ -70,6 +70,15 @@ if( !empty($_POST['btn_confirm']) ) {
       </div>
     </nav>
 
+    <ol class="breadcrumb">
+        <li>
+          <a href="index.html">TOP></a>
+        </li>
+        <li>
+          Rose Rose Roseの採用情報
+        </li>
+    </ol>
+
     <!-- 写真 -->
     <img src="https://images.unsplash.com/photo-1526045478516-99145907023c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxNTgwfDB8MXxzZWFyY2h8NHx8QmVhdXR5JTIwQWR2aXNvcnxlbnwwfHx8fDE2NjkxOTU3NTY&ixlib=rb-4.0.3&q=80&w=400" alt= "" style="width: 400px; height: 200px; margin-bottom: 20px; margin-top: 20px;"/>
     <div style="background: url('{%= kagoshima-city_image %}'); margin-top: 20px;"></div>
