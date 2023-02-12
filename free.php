@@ -422,7 +422,7 @@ if( !empty($_POST['btn_confirm']) ) {
                     <br>
                     <br>
 
-                    <div class="l-contents">
+                    <div class="l-contents" id="form">
                       <div class="l-contents__inner l-inner">
                         <article class="p-entry l-primary">
                           <header class="p-entry l-primary">
