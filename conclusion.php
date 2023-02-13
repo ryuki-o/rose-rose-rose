@@ -57,9 +57,29 @@
       </div>
     </nav>
 
+    <input type="hidden" name="menu1" value="<?php echo $_POST['menu1']; ?>">
+    <input type="hidden" name="menu2" value="<?php echo $_POST['menu2']; ?>">
+    <input type="hidden" name="menu3" value="<?php echo $_POST['menu3']; ?>">
+    <input type="hidden" name="menu4" value="<?php echo $_POST['menu4']; ?>">
+    <input type="hidden" name="menu5" value="<?php echo $_POST['menu5']; ?>">
+    <input type="hidden" name="menu6" value="<?php echo $_POST['menu6']; ?>">
     <main class="page-digest form-page">
       <div class="text-center my-5">
           <h1 class="mb-5">※まだご予約は確定しておりません。</h1>
+          <div class="element_wrap">
+          <label>予約メニュー</label>
+          <p><?php echo $_POST['menu1']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu2']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu3']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu4']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu5']; ?></p>
+          <br>
+          <p><?php echo $_POST['menu6']; ?></p>
+        </div>
           <p class="salon_btn">
             <a class="" href="https://rose-3.stores.jp/">こちらから商品を購入</a>
           </p>

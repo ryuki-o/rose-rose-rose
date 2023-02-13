@@ -353,7 +353,7 @@ if( !empty($_POST['btn_confirm']) ) {
                   <label class="control-label" for="form-input-5">ご要望・お問合せ</label>
                 </div>
                 <div class="form__item-box">
-                  <textarea class="form-control" name="want" id="form-input-5" style="height: 103px;" required="required"></textarea>
+                  <textarea class="form-control" name="want" id="form-input-5" style="height: 103px;"></textarea>
                   <small class="description"></small>
                 </div>
               </div>
