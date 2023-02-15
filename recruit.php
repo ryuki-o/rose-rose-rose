@@ -90,7 +90,7 @@ if( !empty($_POST['btn_confirm']) ) {
 
       <h1 style="text-align: center; font-size: 20px; margin-top: 10px; margin-bottom: 25px;">入力内容の確認</h1>
 
-      <form id="f1" method="post" action="conversion.php" style="text-align: center;" accept-charset="shift_jis">
+      <form id="f1" method="post" action="conversion.php" style="text-align: center;">
         <div class="element_wrap">
           <label>お名前</label>
           <p><?php echo $_POST['name']; ?></p>

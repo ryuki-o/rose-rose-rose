@@ -76,7 +76,7 @@ if( !empty($_POST['btn_confirm']) ) {
 
       <h1 style="text-align: center; font-size: 20px; margin-top: 10px; margin-bottom: 25px;">入力内容の確認</h1>
 
-      <form id="f1" method="post" action="conversion.php" style="text-align: center;" accept-charset="shift_jis">
+      <form id="f1" method="post" action="conversion.php" style="text-align: center;">
         <div class="element_wrap">
           <label>企業名</label>
           <p><?php echo $_POST['your-name']; ?></p>
@@ -446,7 +446,7 @@ if( !empty($_POST['btn_confirm']) ) {
                                 <p role="status" aria-live="polite" aria-atomic="true"></p>
                                 <ul></ul>
                               </div>
-                              <form action="" method="post" class="wpcf7-form init" novalidate="novalidate" data-status="init">
+                              <form action="" method="post" class="wpcf7-form init" data-status="init">
                                 <div style="display: none;">
                 
                                 </div>
