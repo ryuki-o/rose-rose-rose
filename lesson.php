@@ -82,7 +82,7 @@ if( !empty($_POST['btn_confirm']) ) {
         </li>
       </ol>
       <div class="detail">
-        <h2 class="text-primary" style="text-align: center; margin-top: 40px; font-size: 45px;">Support for you</h2>
+        <h2 class="text-primary" style="text-align: center; margin-top: 40px; font-size: 40px;">Support for you</h2>
         <h1 style="text-align: center; font-size: 20px;">Rose Rose Roseへのお仕事依頼</h1>
         <p style="text-align: center;">
          
@@ -206,7 +206,10 @@ if( !empty($_POST['btn_confirm']) ) {
             「メンター」として、いつでも質問を受けてほしい
           </li>
           <li>
-            化粧品を購入する際に介添人としてアテンドしてほしい
+            美容クリニックでの施術やオペの介添
+          </li>
+          <li>
+            化粧品を購入する際のアテンド
           </li>
           <li>
             講座　セミナー
@@ -496,3 +499,10 @@ if( !empty($_POST['btn_confirm']) ) {
     </footer>  
   </body>
 </html>
+<style>
+  @media only screen and (max-width: 480px)  {
+    h2 {
+      text-align: left;
+    }
+  }
+</style>
