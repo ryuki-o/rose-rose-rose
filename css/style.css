@@ -427,7 +427,87 @@ a.recruit {
   padding: 15px;
 }
 
+/* コンサルテーション */
+.jptl-content {
+  background-color: #fff;
+}
 
+.jptl-main {
+  color: #3e3e3e;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.jptl-content::before {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.jptl-content::after {
+  display: table;
+  clear: both;
+  content: "";
+}
+
+.jptl-content__inner {
+  padding-top: 30px;
+  padding-bottom: 60px;
+}
+
+.jptl-content__inner {
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+.jptl-content__inner .jptl-section-main {
+  width: 100%;
+}
+
+#content_area>div>div {
+  clear: both;
+}
+
+div.n {
+  padding: 5px;
+}
+
+.j-header {
+  word-wrap: break-word;
+}
+
+.content-options h3 {
+  font-weight: normal;
+  font-style: normal;
+}
+
+.j-module h3 {
+  font-size: 24px;
+  line-height: 1.25;
+}
+
+.j-module h3 {
+  font-weight: 300;
+  margin: 0;
+}
+
+div.j-text {
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 767px) {
+  .j-module h3 {
+    font-size: 22px !important;
+  }
+}
+
+@media only screen and (max-width: 1171px) {
+  .jptl-content__inner {
+    padding-top: 10px;
+  }
+}
 
 /* お知らせ */
 .news {
