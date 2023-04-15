@@ -437,6 +437,11 @@
           </li>
         </ul>
         <p id="copy">CopyRight 2022 Rose Rose Rose.,LTD. All Rights Reserved.</p>
+        <div class="k_yoyaku">
+          <a href="php/reserve.php" target="_blank">
+            <img src="images/予約はこちらから.jpeg" alt="">
+          </a>
+        </div>
       </div>
     </footer>
   </body>
@@ -446,9 +451,32 @@
     overflow-x: hidden !important;
   }
 
+  .k_yoyaku {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+  }
+
+  img {
+    float: right;
+    max-width: 50%;
+    height: auto;
+  }
+
   @media only screen and (max-width: 480px) {
     #personaltraining__trialsnew_upper {
       font-size: 10px !important;
+    }
+    .k_yoyaku {
+      position: fixed;
+      bottom: 20px;
+      right: 10px;
+      width: 100px;
+    }
+
+    .k_yoyaku img {
+      max-width: 100%;
+      font-size: large;
     }
   }
 </style>
